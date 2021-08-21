@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:login_app/app1/widgets/login_panel.dart';
+import 'package:login_app/util/responsive.dart';
 import 'package:login_app/util/utils.dart';
 import 'package:login_app/util/login_wave.dart';
 
@@ -46,13 +47,22 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(
-              top: h / 2.5,
-              left: defaultSpacing,
-              right: defaultSpacing,
+          Responsive(
+            mobile: Container(
+              margin: EdgeInsets.only(top: h / 2.5),
+              alignment: Alignment.center,
+              child: LoginPanelWidget(),
             ),
-            child: LoginPanelWidget(),
+            tablet: Container(
+              margin: EdgeInsets.only(top: h / 2.5, left: w/4, right: w/4),
+              alignment: Alignment.center,
+              child: LoginPanelWidget(),
+            ),
+            desktop: Container(
+              margin: EdgeInsets.only(top: h / 2.5, left: w/4, right: w/4),
+              alignment: Alignment.center,
+              child: LoginPanelWidget(),
+            ),
           ),
         ],
       ),

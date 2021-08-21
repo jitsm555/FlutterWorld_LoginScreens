@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login_app/util/utils.dart';
 
 class LoginPanelWidget extends StatefulWidget {
+
   @override
   _LoginPanelWidgetState createState() => _LoginPanelWidgetState();
 }
@@ -12,20 +13,23 @@ class _LoginPanelWidgetState extends State<LoginPanelWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        _box(email, "Email", TextInputType.text),
-        _box(password, "Password", TextInputType.text),
-        Container(
-          margin: EdgeInsets.only(top: 32.0, bottom: defaultSpacing),
-          child: _loginButton(),
-        ),
-        _socialAuthButton('f', 'Log in with Facebook'),
-        Container(
-            margin: EdgeInsets.only(top: defaultSpacing),
-            alignment: Alignment.centerRight,
-            child: _forgotPasswordButton()),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: <Widget>[
+          _box(email, "Email", TextInputType.text),
+          _box(password, "Password", TextInputType.text),
+          Container(
+            margin: EdgeInsets.only(top: 32.0, bottom: defaultSpacing),
+            child: _loginButton(),
+          ),
+          _socialAuthButton('f', 'Log in with Facebook'),
+          Container(
+              margin: EdgeInsets.only(top: defaultSpacing),
+              alignment: Alignment.centerRight,
+              child: _forgotPasswordButton()),
+        ],
+      ),
     );
   }
 
